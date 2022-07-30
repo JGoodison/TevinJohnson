@@ -7,35 +7,47 @@ window.onload = function deleteText(){
     text.style.display = "none";
    }
 
-// function deleteText(){
-    
+   let slideIndex = 1;
+   showSlides(slideIndex);
+   
+   function plusSlides(n) {
+     showSlides(slideIndex += n);
+   }
+   
+   function currentSlide(n) {
+     showSlides(slideIndex = n);
+   }
+   
+   function showSlides(n) {
+     let i;
+     let slides = document.getElementsByClassName("mySlides");
+     
+     if (n > slides.length) {slideIndex = 1}    
+     if (n < 1) {slideIndex = slides.length}
+     for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+     }
+     
+     slides[slideIndex-1].style.display = "block";  
+     
+   }
 
-// }
-let slideIndex = 1;
-showSlides(slideIndex);
+   // function popOut(){
+   //    let video1 = document.getElementById("");
+   // }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+   // function exitPopOut(){
 
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+   // }
+   
+$( document ).ready(function() {
+$('#headerVideoLink').magnificPopup({
+ type:'inline',
+ midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+});
+ 
+});
 
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  
-  slides[slideIndex-1].style.display = "block";  
-  
-}
 
 // function byeText(){
 //     let text2 = document.getElementsByClassName("text2");
