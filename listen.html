@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
-    <script src="music.js"></script> 
+    <!-- <script src="music.js"></script>  -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Bungee+Shade&family=Cairo:wght@200;300;400;500&family=Cormorant+SC:wght@300;400;600&family=Libre+Franklin:wght@100;300;400;500&family=Uchen&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Libre+Franklin:wght@100;300;400;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Expletus+Sans&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/e7ef144ec0.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -13,65 +18,96 @@
     <div id="grid-section">
         <div id="bio-section">
             <div class="mySlides fade">
-                <!-- <div class="numbertext">1 / 3</div> -->
-                <!-- <img src="aladdin.jpg" style="width:50vw"> -->
-                <div class="image1"></div>
-                <div class="text">
-                    <!-- <h1>BLVCK</h1>  -->
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Nihil architecto nisi commodi maiores, earum minima illo autem. 
-                        Velit facilis consectetur veritatis exercitationem, officia pariatur
-                        corrupti omnis doloribus sapiente quod labore!
-                    </p> 
-                </div>
-              </div>
-            
-              <div class="mySlides fade">
-                <!-- <div class="numbertext">2 / 3</div> -->
-                <!-- <img src="profile.jpg" style="width:50vw"> -->
-                <div class="image2"></div>
-                <div class="text">
-                    <!-- <h1>BLVCK</h1>  -->
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Nihil architecto nisi commodi maiores, earum minima illo autem. 
-                        Velit facilis consectetur veritatis exercitationem, officia pariatur
-                        corrupti omnis doloribus sapiente quod labore!
-                    </p> 
-                </div>
-              </div>
-            
-              <div class="mySlides fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <!-- <img src="bibble.jpg" style="width:50vw"> -->
-                <div class="image3"></div>
-                <div class="text">
-                    <!-- <h1>BLVCK</h1>  -->
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Nihil architecto nisi commodi maiores, earum minima illo autem. 
-                        Velit facilis consectetur veritatis exercitationem, officia pariatur
-                        corrupti omnis doloribus sapiente quod labore!
-                    </p> 
-                </div>
-              </div>
-            
-              <!-- Next and previous buttons -->
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+             <!-- <img src="cssPhotos/rockStar.jpg" style="width:100%"> -->
+             <div id=image1></div>
+             <div class="text">
+                <p>Nov 22nd, 2015 was the day he knew he would be here forever. 
+                That day his 1st song was recorded and he never looked back! 
+                </p>
             </div>
-            <!-- <br> -->
+            </div>
+          
+          <div class="mySlides fade">
+            <!-- <img src="cssPhotos/lookAway.jpg" style="width:100%"> -->
+            <div id=image2></div>
+            <div class="text">
+                <p>BLVCK, a native of Raleigh creates music that causes 
+                    you to get lost in the deep cuts and vibrant lyrics 
+                    and feel good about yourself all at the same time. His 
+                    music is a vibe that can not be duplicated because it's so 
+                    hard to find a singer/rapper with that much talent. 
+                </p> 
+            </div>
+          </div>
+          
+          <div class="mySlides fade">
+            <!-- <img src="cssPhotos/thinking.jpg" style="width:100%"> -->
+            <div id=image3></div>
+            <div class="text">
+                <p>From live shows as a kid, to headlining local artist 
+                    shows he has done it. He puts on a hell of a show! Most
+                     young artists can't do that or have the charisma to 
+                     make it far. Young Drake, Big Sean, and PND come to 
+                     mind when we hear his music but with his own twist! 
+                </p>
+            </div>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
             
-            <!-- The dots/circles -->
-            <!-- <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-            </div> -->
-       
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              
+              slides[slideIndex-1].style.display = "block";  
+              
+            }
+
+            // function popOut(){
+            //    let video1 = document.getElementById("");
+            // }
+
+            // function exitPopOut(){
+
+            // }
+            
+        $( document ).ready(function() {
+         $('#headerVideoLink').magnificPopup({
+          type:'inline',
+          midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        });
+          
+        });
+   
+        </script>
+            
         <!-- <div id="slider"> -->
-               <!-- <div id="bio-section">
-                <div class="slide" id="slide1">
+      
+            <!-- <div id="bio-section">
+                <div class="slide1">
                     <img src="aladdin.jpg" alt="this is his first image">
-                    <div class="text">
+                    <div id="text">
                         <h1>BLVCK</h1> 
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                             Nihil architecto nisi commodi maiores, earum minima illo autem. 
@@ -80,10 +116,10 @@
                         </p> 
                     </div>
                 </div>
-                <div class="slide" id="slide2">
-                    <img src="profile.jpg" alt="this is his second image">
-                    <div class="text">
-                        <h1>Difenet</h1> 
+                <div class="slide2">
+                    <img src="artHouse.jpg" alt="this is his second image">
+                    <div id="text">
+                        <h1>BLVCK</h1> 
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                             Nihil architecto nisi commodi maiores, earum minima illo autem. 
                             Velit facilis consectetur veritatis exercitationem, officia pariatur
@@ -91,10 +127,10 @@
                         </p> 
                     </div>
                 </div>
-                <div class="slide" id="slide3">
+                <div class="slide3">
                     <img src="bibble.jpg" alt="this is his thrid image">
-                    <div class="text">
-                        <h1>three</h1> 
+                    <div id="text">
+                        <h1>BLVCK</h1> 
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                             Nihil architecto nisi commodi maiores, earum minima illo autem. 
                             Velit facilis consectetur veritatis exercitationem, officia pariatur
@@ -102,140 +138,9 @@
                         </p> 
                     </div>
                 </div>
-                <div class="navigation">
-                    <div class="button"></div>
-                    <div class="button"></div>
-                    <div class="button"></div>
-                </div>
-                <button class="button" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="button" onclick="plusDivs(1)">&#10095;</button>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
             </div> -->
         <!-- </div> -->
-
-
-        <!-- <div id="bio-section">
-            <div id="button-section">
-                <button class="button" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="button" onclick="plusDivs(1)">&#10095;</button>
-            </div> 
-         
-            <img class="slide" src="aladdin.jpg" alt="this is his first image">       
-            <img class="slide" src="profile.jpg" alt="this is his second image">
-            <img class="slide" src="bibble.jpg" alt="this is his thrid image">
-            
-           
-        </div> -->
-    
-    <!-- <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
         
-        function plusDivs(n) {
-          showDivs(slideIndex += n);
-        }
-
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-        
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("slide");
-          var dots = document.getElementsByClassName("demo");
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-            }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" w3-white", "");
-            }
-          x[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " w3-white";
-        }
-    </script> -->
-
-    <!-- <script>
-        var slideIndex = 0;
-        carousel();
-
-        function carousel() {
-        var i;
-        var x = document.getElementsByClassName(".slides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > x.length) {slideIndex = 1}
-        x[slideIndex-1].style.display = "block";
-        setTimeout(carousel, 2000); // Change image every 2 seconds
-        }
-    </script> -->
-
-
-        <!-- <script type ="text/javascript">
-            var slides = document.querySelectorAll(".slide");
-            var buttons = document.querySelectorAll('.button');
-            let currentslide = 1;
-
-            //javascript for image slider manual navigation 
-            var manualNav = function(manual){
-                slides.forEach((slide) => {
-                    slide.classList.remove("active");
-
-                    buttons.forEach((button) => {
-                        button.classList.remove("active");
-                    });
-                });
-                
-                slides[manual].classList.add("active");
-                buttons[manual].classList.add("active");
-
-            }
-
-            buttons.forEach((button, i) => {
-                button.addEventListener("click", () => {
-                    manualNav(i);
-                    currentslide = i;
-                });
-            });
-        </script>
-         -->
-
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            // Next/previous controls
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
-
-            // Thumbnail image controls
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            } 
-        </script>
-
         <div id="listen-section">
             <div id="single-section">
                 <h2>New Singles</h2>
@@ -243,13 +148,24 @@
                 <!-- <i class="fa-solid fa-angle-down"></i>  -->
                 <div class="content content1">
                     <div class="single">
-                        <img src="seeItThrough.jpg" alt="see it through single cover">
-                        <p>See it Through</p>
+                    <!-- <p>See it Through</p> -->
+                    <div class="image-section">
+                        <img class="image" src="cssPhotos/seeItThrough.jpg" alt="see it through single cover">
+                        <div class="listenBtn">
+                            <a href="https://songwhip.com/blvck4/see-it-through" target="_blank">LISTEN NOW</a>
+                        </div>
+                        <!-- <li onclick="listenFunction()" onclick ="showImage()"class="listen-button"><a href="">LISTEN</a></li> -->
                     </div>
-                    <div class="single">
-                        <img src="loveIsWar.jpg" alt="Love is War single cover">
-                        <p>Love is War</p>
+                </div>
+                <div class="single">
+                    <div class="image-section"> 
+                        <img class="image"src="cssPhotos/loveIsWar.jpg" alt="Love is War single cover">
+                    <div class="listenBtn">
+                        <a href="https://songwhip.com/blvck4/love-is-war" target="_blank">LISTEN NOW</a>
                     </div>
+                        <!-- <li onclick="listenFunction(2)" onclick="listenFunction()" class="listen-button"><a href="">LISTEN</a></li> -->
+                    </div>
+                </div>
                 </div>
                 
             </div>
@@ -258,21 +174,32 @@
                 <!-- change this -->
                 <!-- <i class="fa-solid fa-angle-down"></i>  -->
                 <div class="content content2">
-                    <div class="album-grid">
-                        <div class="album album1">
-                            <img src="blackTapes1.jpg" alt="black tapes vol.1 album">
-                            <p>Blvck Tapes, Vol. 2</p>
+                    <!-- <div class="album-grid"> -->
+                    <div class="album album1">
+                        <div class="image-section">
+                            <img src="cssPhotos/blackTapes1.jpg" alt="black tapes vol.1 album">
+                            <div class="listenBtn">
+                                <a href="https://songwhip.com/blvck4/blvck-tapes-vol-1" target="_blank">LISTEN NOW</a>
+                            </div>
                         </div>
-                        <div class="album album2">
-                            <img src="blackTapes2.jpg" alt="black tapes vol.2 allbum">
-                            <p>Blvck Tapes, Vol. 1</p>
+                        
+                        <!-- <p>Blvck Tapes, Vol. 2</p> -->
+                    </div>
+                    <div class="album album2">
+                        <div class="image-section">
+                            <img src="cssPhotos/blackTapes2.jpg" alt="black tapes vol.2 allbum">
+                            <div class="listenBtn">
+                                <a href="https://songwhip.com/blvck4/blvck-tapes-vol-2" target="_blank">LISTEN NOW</a>
+                            </div>
                         </div>
-                        <div class="album album3">
+
+                        <!-- <p>Blvck Tapes, Vol. 1</p> -->
+                    </div>
+                        <!-- <div class="album album3">
                             <img src="itsTooLate.jpg" alt="it's too late album">
                             <p>It's Too Late</p>
-                        </div>
-                    </div>
-                   
+                        </div> -->
+                    <!-- </div> -->
                 </div>
 
             </div>
@@ -281,25 +208,41 @@
                 <!-- change this -->
                 <!-- <i class="fa-solid fa-angle-down"></i>  -->
                 <div class="content content3">
-                    <div class="music-video">
-                        <iframe src="https://www.youtube.com/embed/U6n9MEyYDIo" 
+                    <div class="music-video mv1">
+                        <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/U6n9MEyYDIo" 
                         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                         encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p>See it Through</p>
+                        <!-- <p>See it Through</p> -->
+                        <div class="listenBtn videoListenBtn">
+                            <a href="https://youtu.be/U6n9MEyYDIo" target="_blank">WATCH ON YouTube</a>
+                        </div>
                     </div>
-                    <div class="music-video">
-                        <iframe src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
+                    <div class="music-video mv2">
+                        <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
                         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                         encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p>Love is War</p>
+                        <!-- <p>Love is War</p> -->
+                        <div class="listenBtn videoListenBtn">
+                            <a href="https://youtu.be/QYeZCLPmu_Q" target="_blank">WATCH ON YouTube</a>
+                        </div>
                     </div>
-                
+                    
                 </div>
             </div>
+
         </div>
-    
     </div>
-    </div>
-    
+    <!-- <div id="popOutContainer">
+        <div id="popOutVideo1" onclick="exitPopOut()">
+            <iframe width="416" height="216" src="https://www.youtube.com/embed/U6n9MEyYDIo" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="popOutVideo2" onclick="exitPopOut()">
+            <iframe width="416" height="216" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div> -->
 </body>
 </html>
