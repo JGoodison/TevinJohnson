@@ -39,6 +39,13 @@ window.onload = function deleteText(){
    // function exitPopOut(){
 
    // }
+   $(document).ready(function(){
+  $('.text-container').mouseleave(function(){
+    $(this).removeClass('clicked');
+  }).click(function(){
+    $(this).addClass('clicked').html($(this).html());
+  });
+});
    
 $( document ).ready(function() {
 $('#headerVideoLink').magnificPopup({
@@ -47,6 +54,7 @@ $('#headerVideoLink').magnificPopup({
 });
  
 });
+
 
 
 // function byeText(){

@@ -15,7 +15,12 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="preloader"></div>
+    
+   
+    
     <div id="grid-section">
+        <div id="logo"><h2>blvck</h2></div>
         <div id="bio-section">
             <div class="mySlides fade">
              <!-- <img src="cssPhotos/rockStar.jpg" style="width:100%"> -->
@@ -99,6 +104,23 @@
         });
           
         });
+
+        // Enable hidden nav bar
+{
+  const nav = document.querySelector(".nav");
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    if (lastScrollY < window.scrollY) {
+      nav.classList.add("nav--hidden");
+    } else {
+      nav.classList.remove("nav--hidden");
+    }
+
+    lastScrollY = window.scrollY;
+  });
+}
+
    
         </script>
             
@@ -142,8 +164,19 @@
         <!-- </div> -->
         
         <div id="listen-section">
+            <header>
+                <nav>
+                    <ul class="nav_links">
+                        <li><a href="home_index.html">HOME</a></li>
+                        <li><a href="listen.html">LISTEN</a></li>
+                        <li><a href="merch.html">MERCH</a></li>
+                    </ul>
+                </nav>
+            </header>
             <div id="single-section">
-                <h2>New Singles</h2>
+                <div class="slide-effect">
+                    <h2 class="slide-up">New Singles</h2>
+                </div>
                 <!-- change this -->
                 <!-- <i class="fa-solid fa-angle-down"></i>  -->
                 <div class="content content1">
@@ -170,21 +203,13 @@
                 
             </div>
             <div id="album-section">
-                <h2>Album Releases</h2>
+                <div class="slide-effect">
+                    <h2 class="slide-up2">Album Releases</h2>
+                </div>
                 <!-- change this -->
                 <!-- <i class="fa-solid fa-angle-down"></i>  -->
                 <div class="content content2">
                     <!-- <div class="album-grid"> -->
-                    <div class="album album1">
-                        <div class="image-section">
-                            <img src="cssPhotos/blackTapes1.jpg" alt="black tapes vol.1 album">
-                            <div class="listenBtn">
-                                <a href="https://songwhip.com/blvck4/blvck-tapes-vol-1" target="_blank">LISTEN NOW</a>
-                            </div>
-                        </div>
-                        
-                        <!-- <p>Blvck Tapes, Vol. 2</p> -->
-                    </div>
                     <div class="album album2">
                         <div class="image-section">
                             <img src="cssPhotos/blackTapes2.jpg" alt="black tapes vol.2 allbum">
@@ -195,6 +220,17 @@
 
                         <!-- <p>Blvck Tapes, Vol. 1</p> -->
                     </div>
+                    <div class="album album1">
+                        <div class="image-section">
+                            <img src="cssPhotos/blackTapes1.jpg" alt="black tapes vol.1 album">
+                            <div class="listenBtn">
+                                <a href="https://songwhip.com/blvck4/blvck-tapes-vol-1" target="_blank">LISTEN NOW</a>
+                            </div>
+                        </div>
+                        
+                        <!-- <p>Blvck Tapes, Vol. 2</p> -->
+                    </div>
+
                         <!-- <div class="album album3">
                             <img src="itsTooLate.jpg" alt="it's too late album">
                             <p>It's Too Late</p>
@@ -204,12 +240,17 @@
 
             </div>
             <div id="video-section">
-                <h2>Music Videos</h2>
+                <div class="slide-effect">
+                    <h2 class="slide-up3">MUSIC VIDEOS</h2>
+                </div>
                 <!-- change this -->
                 <!-- <i class="fa-solid fa-angle-down"></i>  -->
                 <div class="content content3">
                     <div class="music-video mv1">
-                        <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/U6n9MEyYDIo" 
+                        <!-- <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/U6n9MEyYDIo" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        <iframe class="video" width="304" height="162" src="https://www.youtube.com/embed/U6n9MEyYDIo" 
                         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                         encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <!-- <p>See it Through</p> -->
@@ -218,7 +259,22 @@
                         </div>
                     </div>
                     <div class="music-video mv2">
-                        <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
+                        <!-- <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        <iframe class="video" width="304" height="162" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- <p>Love is War</p> -->
+                        <div class="listenBtn videoListenBtn">
+                            <a href="https://youtu.be/QYeZCLPmu_Q" target="_blank">WATCH ON YouTube</a>
+                        </div>
+                    </div>
+                    <div class="music-video mv3">
+                        <!-- <iframe class="video" width="416" height="216" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        <iframe class="video" width="304" height="162s" src="https://www.youtube.com/embed/QYeZCLPmu_Q" 
                         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                         encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <!-- <p>Love is War</p> -->
@@ -229,6 +285,9 @@
                     
                 </div>
             </div>
+
+
+            
 
         </div>
     </div>
@@ -244,5 +303,11 @@
             encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div> -->
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display = 'none';
+        })
+    </script>
 </body>
 </html>
